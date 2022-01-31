@@ -43,7 +43,7 @@ async def on_message(ctx):
     elif "r" in ctx.content:
         blkjck.create_embed(False)
         await channel.send(embed=blkjck.embed)
-        
+
     return
         
 
@@ -51,6 +51,10 @@ async def on_message(ctx):
 async def clear(ctx, amount : int):
     await ctx.channel.purge(limit=amount)
 
-bot.run('OTMyNDMxNjIwNDIwNTUwNzE3.YeS4ng._v2XGpcQwDhR4nYGUBnEqGUqbcI')
+with open('token.txt') as f:
+    TOKEN = f.readline()
+
+bot.run(TOKEN)
+
 
 
